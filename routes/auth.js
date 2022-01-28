@@ -33,6 +33,7 @@ authRouter.post('/login', async (req, res) => {
             throw new Error('WRONG_CREDENTIALS')
         } else {
             const access_token = createToken(email, user.id)
+            console.log(access_token, 'accessToken')
             return res.status(200).json({ access_token: access_token})
         }
     } catch (error) {
